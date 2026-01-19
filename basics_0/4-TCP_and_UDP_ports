@@ -1,4 +1,4 @@
-#!usr//bin/env bash
+#!usr/bin/env bash
 
 # Script pour afficher les ports en écoute avec PID et nom de programme
 # Note : L'utilisation de sudo est nécessaire pour afficher les PID/Noms des processus
