@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
+# Displays listening ports with PID and program name
 
-# Script pour afficher les ports en écoute avec PID et nom de programme
-# Note : L'utilisation de sudo est nécessaire pour afficher les PID/Noms des processus
-sudo netstat -lntp
+netstat -lp
