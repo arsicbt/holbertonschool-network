@@ -31,3 +31,20 @@ lo: flags=73<UP,LOOPBACK,RUNNING>
 ```
 172.17.0.2
 127.0.0.1
+
+-----------------
+# Explication Tache : 2. Port listening on localhost
+``` 
+**nc (netcat)**
+Netcat est un *outil réseau puissant*, souvent appelé le "couteau suisse TCP/IP". Il peut :
+
+* Écouter sur un port (mode serveur)
+* Se connecter à un port (mode client)
+* Transférer des données
+
+**Options utilisées :**
+
+* **-l : Listen mode (mode écoute)** - crée un serveur qui attend des connexions
+* **localhost :** écoute uniquement sur l'interface locale **(127.0.0.1)**
+* **98 :** numéro du port
+```
