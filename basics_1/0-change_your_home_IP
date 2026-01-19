@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
-# Script that configure an Ubuntu server
+# Script that configures an Ubuntu server so that localhost resolves to 127.0.0.2 and facebook.com resolves to 8.8.8.8
 
+# Filter out old entries and save to temp file
+grep -v localhost /etc/hosts | grep -v facebook.com > /tmp/newhosts
 
-sed -i.bak '/127.0.0.1.*localhost/d; /localhost/d; /facebook.com/d' /etc/hosts
-echo "127.0.0.2 localhost" >> /etc/hosts
-echo "8.8.8.8 facebook.com" >> /etc/hosts
+# Add new entries
+echo "127.0.0.2 localhost" >> /tmp/newhosts
+echo "8.8.8.8 facebook.com" >> /tmp/newhosts
+
+# Overwrite the hosts file
+cat /tmp/newhosts > /etc/hosts
+
+# Clean up
+rm /tmp/newhosts

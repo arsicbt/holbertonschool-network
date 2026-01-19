@@ -2,18 +2,3 @@
 # Displays listening ports with PID and program name
 
 netstat -lp
-
-
-# Create a temporary file with the filtered content
-grep -v 'localhost' /etc/hosts | grep -v 'facebook.com' > /tmp/hosts.tmp | grep -v '::1' > /tmp/hosts.tmp
-
-# Add the new entries
-echo "127.0.0.2 localhost" >> /etc/hosts
-echo "8.8.8.8 facebook.com" >> /etc/hosts
-
-
-# Replace the original file
-cp /tmp/hosts.tmp /etc/hosts
-
-# Clean up !
-rm /tmp/hosts.tmp
