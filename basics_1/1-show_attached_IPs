@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# 
+
+ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1
+
+# 'ipp addr show eth0' :    affiche les informations réseau de l'interface 'eth0'
+# 'grep "inet\b' :          filtre pour ne garder que les lignes contenant "inet"
+# 'awk '{print $2}':        extrait le 2eme champ (colonne) de la ligne
+# 'cut -d/ -f1':            coupe la chaine de caractere '/' et garde la 1ere partie
